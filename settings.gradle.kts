@@ -16,5 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "Task-Pilot"
 include(":desktop")
 include(":shared")
-includeBuild("convention-plugins")
 include(":androidApp")

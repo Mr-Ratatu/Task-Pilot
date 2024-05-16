@@ -12,9 +12,11 @@ import renat.task.pilot.theme.AppThemeProvider
 
 @Composable
 fun RootScreen() {
-    AppTheme(true) {
+    AppTheme(false) {
         Box(
-            modifier = Modifier.fillMaxSize().background(AppThemeProvider.colors.backgroundColor)
+            modifier = Modifier
+                .fillMaxSize()
+                .background(AppThemeProvider.colors.backgroundColor)
         ) {
             ProjectScreen(getKoinInstance())
         }

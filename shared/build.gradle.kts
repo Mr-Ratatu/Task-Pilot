@@ -2,13 +2,10 @@ plugins {
     alias(libs.plugins.multiplatform)
     alias(libs.plugins.composePlugin)
     alias(libs.plugins.android.library)
-    alias(libs.plugins.moko.res)
     alias(libs.plugins.kotlinx.serialization)
-//    alias(libs.plugins.sqldelight)
+    id("dev.icerock.mobile.multiplatform-resources")
+    alias(libs.plugins.sqldelight)
 }
-
-//group = "renat.task.pilot"
-//version = "1.0"
 
 kotlin {
     androidTarget {
@@ -22,17 +19,6 @@ kotlin {
 
     jvm()
 
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach {
-        it.binaries.framework {
-            baseName = "shared"
-            isStatic = true
-        }
-    }
-
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -42,34 +28,39 @@ kotlin {
                 implementation(libs.multiplatformSettings)
                 api(libs.koin.core)
 
+                // lifecycle
+                api(libs.lifecycle.viewModel)
+
                 // Compose
                 implementation(compose.ui)
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material)
+
+                // Resources
+                api(libs.resources.core)
+                api(libs.resources.compose)
+
+                // Database
+                implementation(libs.sqldelight.coroutines.extensions)
             }
         }
 
         androidMain.dependencies {
             implementation(libs.kotlinx.coroutines.android)
+
+            // Database
+            implementation(libs.sqldelight.android.driver)
         }
 
         jvmMain {
             dependencies {
                 implementation(libs.kotlinx.coroutines.swing)
                 api(compose.desktop.currentOs)
+
+                // Database
+                implementation(libs.sqldelight.desktop.driver)
             }
-        }
-
-        val iosX64Main by getting
-        val iosArm64Main by getting
-        val iosSimulatorArm64Main by getting
-
-        iosMain {
-            dependsOn(commonMain)
-            iosX64Main.dependsOn(this)
-            iosArm64Main.dependsOn(this)
-            iosSimulatorArm64Main.dependsOn(this)
         }
     }
 
@@ -90,5 +81,14 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+sqldelight {
+    databases {
+        create("TaskPilotDb") {
+            packageName.set("renat.task.pilot.db")
+            schemaOutputDirectory.set(file("src/commonMain/sqldelight/db"))
+        }
     }
 }

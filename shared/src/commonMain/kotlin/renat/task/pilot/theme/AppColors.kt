@@ -12,25 +12,3 @@ data class AppColors(
     val cardIconColor: Color,
     val columnBackgroundColor: Color,
 )
-
-val lightPalette = AppColors(
-    titleTextColor = Color(0xFF121212),
-    cardTitleColor = Color(0xFF31446C),
-    descriptionColor = Color(0xFF888888),
-    backgroundColor = Color(0xFFEAEFD1),
-    cardColor = Color(0xFFFFFFFF),
-    iconColor = Color(0xFF121212),
-    cardIconColor = Color(0xFF888888),
-    columnBackgroundColor = Color(0xFFF2F4F8)
-)
-
-val darkPalette = AppColors(
-    titleTextColor = Color(0xFF121212),
-    cardTitleColor = Color(0xFF31446C),
-    descriptionColor = Color(0xFF888888),
-    backgroundColor = Color(0xFFEAEFD1),
-    cardColor = Color(0xFFFFFFFF),
-    iconColor = Color(0xFF121212),
-    cardIconColor = Color(0xFF888888),
-    columnBackgroundColor = Color(0xFFF2F4F8)
-)

@@ -18,7 +18,6 @@ fun initKoin(
     vararg applyModules: Module = arrayOf(module {})
 ) = startKoin {
     modules(
-        *ViewModels.viewModelModules,
         *applyModules,
         ProjectsModules.module,
     )

@@ -1,0 +1,16 @@
+getAllProject:
+SELECT *
+FROM projectDTO;
+
+insertProject:
+INSERT INTO projectDTO(id, name, desciption)
+VALUES (?, ?, ?);
+
+deleteProejct:
+DELETE FROM projectDTO WHERE id IS :id;
+
+updateProject:
+UPDATE projectDTO SET
+desciption = :desciption,
+name = :name
+WHERE id IS :id;

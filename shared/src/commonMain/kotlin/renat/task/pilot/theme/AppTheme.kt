@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.staticCompositionLocalOf
+import renat.task.pilot.theme.palette.darkPalette
+import renat.task.pilot.theme.palette.lightPalette
 
 @Composable
 fun AppTheme(
