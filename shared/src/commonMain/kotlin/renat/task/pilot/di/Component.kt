@@ -8,6 +8,8 @@ import org.koin.core.qualifier.Qualifier
 import org.koin.dsl.module
 import renat.task.pilot.screens.projects.di.ProjectsModules
 
+expect val platformModule: Module
+
 inline fun <reified T> getKoinInstance(qualifier: Qualifier? = null): T {
     return object : KoinComponent {
         val value : T by inject(qualifier)
@@ -19,6 +21,8 @@ fun initKoin(
 ) = startKoin {
     modules(
         *applyModules,
+        platformModule,
+        StorageModule.database,
         ProjectsModules.module,
     )
 }

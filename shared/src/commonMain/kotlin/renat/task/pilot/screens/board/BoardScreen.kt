@@ -19,7 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import renat.task.pilot.screens.projects.presentation.items.ProjectItem
-import renat.task.pilot.screens.projects.model.ProjectDto
+import renat.task.pilot.screens.projects.model.Project
 import renat.task.pilot.theme.AppThemeProvider
 
 @Composable
@@ -82,38 +82,38 @@ fun AddCardButton() {
 
 data class ColumnItem(
     val title: String,
-    val items: List<ProjectDto>
+    val items: List<Project>
 ) {
     companion object {
 
         val default = buildList<ColumnItem> {
             val projects = listOf(
-                ProjectDto(
+                Project(
                     "Изучить KMP",
                     "Необходимо для роста хард скиллов",
                     0,
                 ),
-                ProjectDto(
+                Project(
                     "Изучить память Android",
                     "Необходимо для роста хард скиллов",
                     0,
                 ),
-                ProjectDto(
+                Project(
                     "Изучить art, dalvik",
                     "Необходимо для роста хард скиллов",
                     0,
                 ),
-                ProjectDto(
+                Project(
                     "Изучить тестирование",
                     "Необходимо для роста хард скиллов",
                     0,
                 ),
-                ProjectDto(
+                Project(
                     "Изучить тестирование",
                     "Необходимо для роста хард скиллов",
                     0,
                 ),
-                ProjectDto(
+                Project(
                     "Изучить тестирование",
                     "Необходимо для роста хард скиллов",
                     0,

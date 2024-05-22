@@ -1,5 +1,6 @@
 CREATE TABLE projectDTO(
     id TEXT PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
-    desciption TEXT NOT NULL
+    desciption TEXT NOT NULL,
+    boardId INTEGER NOT NULL
 );

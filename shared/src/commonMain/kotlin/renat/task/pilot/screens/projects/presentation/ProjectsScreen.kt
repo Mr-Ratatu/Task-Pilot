@@ -10,7 +10,7 @@ import renat.task.pilot.screens.projects.presentation.items.ProjectToolbar
 
 @Composable
 fun ProjectScreen(viewModel: ProjectsViewModel) {
-    val projects by viewModel.projects.collectAsState()
+    val projects by viewModel.projects.collectAsState(emptyList())
 
     Column {
         ProjectToolbar(viewModel)

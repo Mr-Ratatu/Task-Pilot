@@ -1,30 +1,18 @@
 package renat.task.pilot.screens.projects.domain
 
-import renat.task.pilot.screens.projects.model.ProjectDto
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+import renat.task.pilot.screens.projects.data.local.ProjectsDao
+import renat.task.pilot.screens.projects.model.Project
+import renat.task.pilot.screens.projects.model.Project.Companion.toProject
 
-class ProjectListUseCase {
-    operator fun invoke(): List<ProjectDto> {
-        return listOf(
-            ProjectDto(
-                "Изучить KMP",
-                "Необходимо для роста хард скиллов",
-                0,
-            ),
-            ProjectDto(
-                "Изучить память Android",
-                "Необходимо для роста хард скиллов",
-                0,
-            ),
-            ProjectDto(
-                "Изучить art, dalvik",
-                "Необходимо для роста хард скиллов",
-                0,
-            ),
-            ProjectDto(
-                "Изучить тестирование",
-                "Необходимо для роста хард скиллов",
-                0,
-            ),
-        )
+class ProjectListUseCase(private val dao: ProjectsDao) {
+
+    operator fun invoke(): Flow<List<Project>> {
+        return dao.projects.map { list ->
+            list.map {
+                it.toProject()
+            }
+        }
     }
 }

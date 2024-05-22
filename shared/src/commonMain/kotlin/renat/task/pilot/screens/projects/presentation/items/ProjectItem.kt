@@ -21,10 +21,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import renat.task.pilot.screens.projects.model.ProjectDto
+import renat.task.pilot.screens.projects.model.Project
 
 @Composable
-internal fun ProjectItem(projectDto: ProjectDto, modifier: Modifier = Modifier) {
+internal fun ProjectItem(project: Project, modifier: Modifier = Modifier) {
     Card(
         modifier = modifier
             .fillMaxWidth(),
@@ -52,13 +52,13 @@ internal fun ProjectItem(projectDto: ProjectDto, modifier: Modifier = Modifier) 
                 ) {
                     Text(
                         modifier = Modifier.padding(bottom = 8.dp),
-                        text = projectDto.projectName,
+                        text = project.projectName,
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold,
                     )
 
                     Text(
-                        text = projectDto.description,
+                        text = project.description,
                         color = Color.Gray,
                     )
                 }

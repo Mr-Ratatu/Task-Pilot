@@ -8,10 +8,10 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import renat.task.pilot.screens.projects.model.ProjectDto
+import renat.task.pilot.screens.projects.model.Project
 
 @Composable
-internal fun ProjectList(projects: List<ProjectDto>) {
+internal fun ProjectList(projects: List<Project>) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
