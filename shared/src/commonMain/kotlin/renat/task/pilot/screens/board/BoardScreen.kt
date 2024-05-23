@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import renat.task.pilot.screens.projects.presentation.items.ProjectItem
+import renat.task.pilot.screens.projects.presentation.components.ProjectItem
 import renat.task.pilot.screens.projects.model.Project
 import renat.task.pilot.theme.AppThemeProvider
 

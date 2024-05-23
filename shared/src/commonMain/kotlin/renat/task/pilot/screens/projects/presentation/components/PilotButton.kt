@@ -1,4 +1,4 @@
-package renat.task.pilot.screens.projects.presentation.items
+package renat.task.pilot.screens.projects.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -12,7 +12,7 @@ import renat.task.pilot.theme.AppThemeProvider
 @Composable
 fun PilotButton(
     modifier: Modifier = Modifier,
-    onClick: () -> Unit = {},
+    onClick: () -> Unit,
 ) {
     TextButton(
         modifier = modifier

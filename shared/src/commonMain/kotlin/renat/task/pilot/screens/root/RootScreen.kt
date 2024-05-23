@@ -18,7 +18,7 @@ fun RootScreen() {
                 .fillMaxSize()
                 .background(AppThemeProvider.colors.backgroundColor)
         ) {
-            MainScreen(getKoinInstance())
+            MainScreen()
         }
     }
 }

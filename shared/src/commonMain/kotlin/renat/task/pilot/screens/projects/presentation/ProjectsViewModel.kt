@@ -1,24 +1,38 @@
 package renat.task.pilot.screens.projects.presentation
 
-import renat.task.pilot.core.vm.BaseViewModel
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import renat.task.pilot.core.vm.MviViewModel
 import renat.task.pilot.navigation.Destinations
 import renat.task.pilot.navigation.Navigator
 import renat.task.pilot.screens.projects.domain.ProjectListUseCase
-import renat.task.pilot.screens.projects.state.ProjectsState
+import renat.task.pilot.screens.projects.presentation.intent.NavIntent
+import renat.task.pilot.screens.projects.presentation.intent.ProjectsIntent
+import renat.task.pilot.screens.projects.presentation.reduce.ProjectsReducer
+import renat.task.pilot.screens.projects.presentation.state.ProjectsState
 
 class ProjectsViewModel(
     private val projectListUseCase: ProjectListUseCase,
     private val navigator: Navigator,
-) : BaseViewModel<ProjectsState, Nothing>() {
-    val projects = projectListUseCase()
+) : MviViewModel<ProjectsState, ProjectsIntent, ProjectsReducer>() {
 
-    override fun onCleared() {
-
+    init {
+        projectListUseCase()
+            .onEach { projects -> sendReduce(ProjectsReducer.SetProjects(projects)) }
+            .launchIn(viewModelScope)
     }
 
-    fun navigateToBoard()  {
-        navigator.tryNavigateTo(Destinations.KanbanBoardScreen)
+    override fun initialStateValue() = ProjectsState.NONE
+
+    override fun reduce(state: ProjectsState, reducer: ProjectsReducer): ProjectsState {
+        return when (reducer) {
+            is ProjectsReducer.SetProjects -> state.copy(projects = reducer.projects)
+        }
     }
 
-    override fun initState(): ProjectsState = ProjectsState.NONE
+    override fun executeIntent(intent: ProjectsIntent) {
+        when (intent) {
+            is NavIntent.OpenKanbanBoardScreen -> navigator.tryNavigateTo(Destinations.KanbanBoardScreen)
+        }
+    }
 }

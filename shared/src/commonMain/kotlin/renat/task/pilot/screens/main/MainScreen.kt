@@ -5,11 +5,12 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.flow.Flow
-import renat.task.pilot.navigation.NavHostScreens
+import org.koin.compose.koinInject
+import renat.task.pilot.navigation.NavGraph
 import renat.task.pilot.navigation.NavigationIntent
 
 @Composable
-fun MainScreen(viewModel: MainScreenViewModel) {
+fun MainScreen(viewModel: MainScreenViewModel = koinInject()) {
     val navController = rememberNavController()
 
     NavigationEffect(
@@ -17,7 +18,7 @@ fun MainScreen(viewModel: MainScreenViewModel) {
         navHostController = navController
     )
 
-    NavHostScreens(navController)
+    NavGraph(navController)
 }
 
 @Composable

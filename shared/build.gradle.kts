@@ -26,7 +26,11 @@ kotlin {
                 implementation(libs.kotlinx.serialization.json)
                 implementation(libs.kotlinx.datetime)
                 implementation(libs.multiplatformSettings)
+
+                // DI
+                api(project.dependencies.platform(libs.koin.bom))
                 api(libs.koin.core)
+                api(libs.koin.compose)
 
                 // lifecycle
                 api(libs.lifecycle.viewModel)

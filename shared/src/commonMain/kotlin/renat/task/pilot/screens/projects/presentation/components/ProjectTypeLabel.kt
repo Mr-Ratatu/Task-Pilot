@@ -1,4 +1,4 @@
-package renat.task.pilot.screens.projects.presentation.items
+package renat.task.pilot.screens.projects.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
