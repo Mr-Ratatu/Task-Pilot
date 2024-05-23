@@ -18,6 +18,7 @@ androidx-activityCompose = "1.8.0"
 moko-res = "0.24.0-beta-3"
 sqlDelight = "2.0.1"
 lifecycle = "2.8.0-alpha03"
+navigation = "2.7.0-alpha06"
 
 [libraries]
 
@@ -39,6 +40,7 @@ resources-core = { module = "dev.icerock.moko:resources", version.ref = "moko-re
 resources-compose = { module = "dev.icerock.moko:resources-compose", version.ref = "moko-res" }
 lifecycle-viewModel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 lifecycle-viewModel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+androidx-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigation" }
 sqldelight-coroutines-extensions = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
 sqldelight-android-driver = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight" }
 sqldelight-native-driver = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }

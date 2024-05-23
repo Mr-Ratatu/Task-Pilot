@@ -14,7 +14,7 @@ fun ProjectScreen(viewModel: ProjectsViewModel) {
 
     Column {
         ProjectToolbar(viewModel)
-        PilotButton()
+        PilotButton { viewModel.navigateToBoard() }
         ProjectList(projects)
     }
 }

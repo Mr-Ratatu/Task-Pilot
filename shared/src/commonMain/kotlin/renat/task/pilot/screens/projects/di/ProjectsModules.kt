@@ -12,6 +12,6 @@ object ProjectsModules {
 
         factory<ProjectListUseCase> { ProjectListUseCase(get()) }
 
-        factory { ProjectsViewModel(projectListUseCase = get()) }
+        factory { ProjectsViewModel(projectListUseCase = get(), navigator = get()) }
     }
 }

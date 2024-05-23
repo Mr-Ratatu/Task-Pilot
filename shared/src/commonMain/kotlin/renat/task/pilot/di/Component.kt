@@ -6,6 +6,7 @@ import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 import org.koin.core.qualifier.Qualifier
 import org.koin.dsl.module
+import renat.task.pilot.screens.main.MainModule
 import renat.task.pilot.screens.projects.di.ProjectsModules
 
 expect val platformModule: Module
@@ -22,7 +23,9 @@ fun initKoin(
     modules(
         *applyModules,
         platformModule,
-        StorageModule.database,
+        StorageModule.module,
+        NavigationModule.module,
         ProjectsModules.module,
+        MainModule.module,
     )
 }

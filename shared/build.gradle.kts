@@ -30,6 +30,7 @@ kotlin {
 
                 // lifecycle
                 api(libs.lifecycle.viewModel)
+                implementation(libs.androidx.navigation.compose)
 
                 // Compose
                 implementation(compose.ui)
