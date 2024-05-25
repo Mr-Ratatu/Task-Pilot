@@ -6,4 +6,6 @@ sealed interface ProjectsIntent : Intent
 
 sealed interface NavIntent : ProjectsIntent {
     data object OpenKanbanBoardScreen : NavIntent
+
+    data object OpenProjectCreatingScreen : NavIntent
 }

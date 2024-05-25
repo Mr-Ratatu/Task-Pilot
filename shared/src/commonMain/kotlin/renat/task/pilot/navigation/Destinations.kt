@@ -7,7 +7,9 @@ sealed class Destinations(protected val route: String, vararg arguments: Any?) {
         operator fun invoke() = route
     }
 
-    data object ProjectScreen : NoArgumentsDestination(PROJECTS_SCREEN_ROUTE_DESTINATION)
+    data object ProjectListScreen : NoArgumentsDestination(PROJECTS_SCREEN_ROUTE_DESTINATION)
+
+    data object NewProjectScreen : NoArgumentsDestination(NEW_PROJECT_SCREEN_ROUTE_DESTINATION)
 
     data object KanbanBoardScreen : Destinations(KANBAN_BOARD_SCREEN_ROUTE_DESTINATION) {
         private const val BOARD_ID = "board_id"
@@ -21,6 +23,7 @@ sealed class Destinations(protected val route: String, vararg arguments: Any?) {
 
     private companion object {
         const val PROJECTS_SCREEN_ROUTE_DESTINATION = "projects_screen"
+        const val NEW_PROJECT_SCREEN_ROUTE_DESTINATION = "new_project_screen"
         const val KANBAN_BOARD_SCREEN_ROUTE_DESTINATION = "kanban_board_screen"
     }
 }

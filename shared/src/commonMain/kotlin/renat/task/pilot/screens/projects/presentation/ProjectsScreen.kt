@@ -17,7 +17,7 @@ fun ProjectScreen(viewModel: ProjectsViewModel = koinInject()) {
     Column {
         ProjectToolbar()
         PilotButton(
-            onClick = { viewModel.sendIntent(NavIntent.OpenKanbanBoardScreen) }
+            onClick = { viewModel.sendIntent(NavIntent.OpenProjectCreatingScreen) }
         )
         ProjectList(state.projects)
     }

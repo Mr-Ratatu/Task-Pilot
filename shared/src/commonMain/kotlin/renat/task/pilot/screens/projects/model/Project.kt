@@ -15,5 +15,14 @@ data class Project(
                 boardId = boardId
             )
         }
+
+        fun Project.toProjectDTO(id: String): ProjectDTO {
+            return ProjectDTO(
+                id = id,
+                name = projectName,
+                desciption = description,
+                boardId = boardId,
+            )
+        }
     }
 }

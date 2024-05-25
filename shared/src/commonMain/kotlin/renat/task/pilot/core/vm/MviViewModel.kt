@@ -1,9 +1,9 @@
 package renat.task.pilot.core.vm
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -43,4 +43,9 @@ abstract class MviViewModel<ViewState: State, ViewIntent: Intent, Reduce: Reduce
     protected abstract fun executeIntent(intent: ViewIntent)
 
     protected abstract fun reduce(state: ViewState, reducer: Reduce): ViewState
+
+    override fun onCleared() {
+        super.onCleared()
+        viewModelScope.cancel()
+    }
 }

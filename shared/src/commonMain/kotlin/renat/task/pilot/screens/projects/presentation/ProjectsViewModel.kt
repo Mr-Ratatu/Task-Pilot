@@ -33,6 +33,7 @@ class ProjectsViewModel(
     override fun executeIntent(intent: ProjectsIntent) {
         when (intent) {
             is NavIntent.OpenKanbanBoardScreen -> navigator.tryNavigateTo(Destinations.KanbanBoardScreen)
+            is NavIntent.OpenProjectCreatingScreen -> navigator.tryNavigateTo(Destinations.NewProjectScreen)
         }
     }
 }

@@ -12,9 +12,11 @@ fun AppTheme(
     isDarkTheme: Boolean,
     content: @Composable () -> Unit,
 ) {
+    val dimens = AppDimens()
     val colors = if (isDarkTheme) darkPalette else lightPalette
     CompositionLocalProvider(
-        LocalAppColors provides colors
+        LocalAppColors provides colors,
+        LocalAppDimens provides dimens,
     ) {
         content()
     }
@@ -24,10 +26,18 @@ val LocalAppColors = staticCompositionLocalOf<AppColors> {
     error("CompositionLocal AppColor not present")
 }
 
-object AppThemeProvider {
+val LocalAppDimens = staticCompositionLocalOf<AppDimens> {
+    error("CompositionLocal AppDimens not present")
+}
 
+object AppThemeProvider {
     val colors: AppColors
         @Composable
         @ReadOnlyComposable
         get() = LocalAppColors.current
+
+    val dimens: AppDimens
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalAppDimens.current
 }
