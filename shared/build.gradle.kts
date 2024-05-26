@@ -1,9 +1,9 @@
 plugins {
     alias(libs.plugins.multiplatform)
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.composePlugin)
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlinx.serialization)
-    id("dev.icerock.mobile.multiplatform-resources")
     alias(libs.plugins.sqldelight)
 }
 
@@ -20,6 +20,11 @@ kotlin {
     jvm()
 
     sourceSets {
+        all {
+            languageSettings {
+                optIn("org.jetbrains.compose.resources.ExperimentalResourceApi")
+            }
+        }
         val commonMain by getting {
             dependencies {
                 implementation(libs.kotlinx.coroutines.core)
@@ -43,6 +48,7 @@ kotlin {
                 implementation(compose.material)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 api(compose.components.resources)
+                implementation(compose.components.uiToolingPreview)
 
                 // Resources
                 api(libs.resources.core)

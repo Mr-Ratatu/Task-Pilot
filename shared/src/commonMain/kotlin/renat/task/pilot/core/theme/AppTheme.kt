@@ -9,7 +9,7 @@ import renat.task.pilot.core.theme.palette.lightPalette
 
 @Composable
 fun AppTheme(
-    isDarkTheme: Boolean,
+    isDarkTheme: Boolean = false,
     content: @Composable () -> Unit,
 ) {
     val dimens = AppDimens()

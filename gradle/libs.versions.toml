@@ -1,10 +1,10 @@
 [versions]
 
-compose = "1.5.11"
-kotlin = "1.9.20"
-agp = "8.1.0"
-kotlinx-coroutines = "1.7.3"
-kotlinx-serialization = "1.6.2"
+compose = "1.6.10-rc01"
+kotlin = "2.0.0-RC2"
+agp = "8.2.2"
+kotlinx-coroutines = "1.8.1"
+kotlinx-serialization = "1.6.3"
 kotlinx-datetime = "0.5.0"
 multiplatformSettings = "1.1.1"
 koin = "3.5.3"
@@ -13,10 +13,10 @@ junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 material = "1.11.0"
-androidx-activityCompose = "1.8.0"
+androidx-activityCompose = "1.9.0"
 moko-res = "0.24.0-beta-3"
-sqlDelight = "2.0.1"
-lifecycle = "2.8.0-alpha03"
+sqlDelight = "2.0.2"
+lifecycle = "2.8.0"
 navigation = "2.7.0-alpha06"
 
 [libraries]
@@ -56,9 +56,9 @@ sqldelight-desktop-driver = { module = "app.cash.sqldelight:sqlite-driver", vers
 
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 composePlugin = { id = "org.jetbrains.compose", version.ref = "compose" }
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
-moko-res = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko-res" }

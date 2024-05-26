@@ -7,9 +7,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import renat.task.pilot.navigation.Destinations.*
-import renat.task.pilot.screens.board.BoardScreen
-import renat.task.pilot.screens.new_project.presentation.NewProjectScreen
-import renat.task.pilot.screens.projects.presentation.ProjectScreen
+import renat.task.pilot.features.board.BoardScreen
+import renat.task.pilot.features.new_project.presentation.NewProjectScreen
+import renat.task.pilot.features.projects.presentation.ProjectScreen
 
 @Composable
 fun NavGraph(navHostController: NavHostController) {
