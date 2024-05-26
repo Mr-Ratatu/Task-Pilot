@@ -1,18 +1,34 @@
 package renat.task.pilot.screens.projects.model
 
 import db.projects.ProjectDTO
+import java.util.UUID
 
 data class Project(
     val projectName: String,
     val description: String,
     val boardId: Long,
+    val tags: List<String>,
 ) {
     companion object {
+        fun create(
+            projectName: String,
+            description: String,
+            tags: List<String>,
+        ) : Project {
+            return Project(
+                projectName = projectName,
+                description = description,
+                boardId = UUID.randomUUID().leastSignificantBits,
+                tags = tags,
+            )
+        }
+
         fun ProjectDTO.toProject(): Project {
             return Project(
                 projectName = name,
                 description = desciption,
-                boardId = boardId
+                boardId = boardId,
+                tags = tags,
             )
         }
 
@@ -22,6 +38,7 @@ data class Project(
                 name = projectName,
                 desciption = description,
                 boardId = boardId,
+                tags = tags,
             )
         }
     }

@@ -1,7 +1,7 @@
 package renat.task.pilot.screens.new_project.data
 
 import db.projects.ProjectDTO
-import renat.task.pilot.screens.projects.data.local.ProjectsDao
+import renat.task.pilot.core.data.local.dao.project.ProjectsDao
 
 class NewProjectRepositoryImpl(
     private val dao: ProjectsDao,

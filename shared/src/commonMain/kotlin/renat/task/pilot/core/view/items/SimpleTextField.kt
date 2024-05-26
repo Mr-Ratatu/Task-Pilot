@@ -1,4 +1,4 @@
-package renat.task.pilot.core.items
+package renat.task.pilot.core.view.items
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Text
@@ -11,7 +11,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import renat.task.pilot.theme.AppThemeProvider
+import renat.task.pilot.core.theme.AppThemeProvider
 
 @Composable
 fun SimpleTextField(

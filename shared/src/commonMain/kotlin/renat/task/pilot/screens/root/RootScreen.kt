@@ -6,8 +6,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import renat.task.pilot.screens.main.MainScreen
-import renat.task.pilot.theme.AppTheme
-import renat.task.pilot.theme.AppThemeProvider
+import renat.task.pilot.core.theme.AppTheme
+import renat.task.pilot.core.theme.AppThemeProvider
 
 @Composable
 fun RootScreen() {

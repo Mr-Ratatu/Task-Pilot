@@ -1,4 +1,4 @@
-package renat.task.pilot.core.items
+package renat.task.pilot.core.view.items
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -15,14 +15,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import renat.task.pilot.theme.AppThemeProvider
+import renat.task.pilot.core.theme.AppThemeProvider
 
 @Composable
 internal fun TagLabel(
     tagName: String,
+    defaultCheck: Boolean = false,
     onClick: (String) -> Unit = {},
 ) {
-    var isChecked by remember { mutableStateOf(false) }
+    var isChecked by remember { mutableStateOf(defaultCheck) }
 
     Row(
         modifier = Modifier

@@ -13,7 +13,6 @@ internal fun ProjectToolbar() {
         modifier = Modifier.height(56.dp)
     ) {
         Row {
-
         }
     }
 }

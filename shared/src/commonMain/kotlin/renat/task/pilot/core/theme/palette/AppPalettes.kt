@@ -1,14 +1,14 @@
-package renat.task.pilot.theme.palette
+package renat.task.pilot.core.theme.palette
 
 import androidx.compose.ui.graphics.Color
-import renat.task.pilot.theme.AppColors
+import renat.task.pilot.core.theme.AppColors
 
 val lightPalette = AppColors(
-    titleTextColor = Color(0xFF121212),
+    titleTextColor = Color(0xFF0B204D),
     hintColor = Color(0xFFDADAE0),
     cardTitleColor = Color(0xFF31446C),
-    descriptionColor = Color(0xFF888888),
-    backgroundColor = Color(0xF5F5F5F5),
+    descriptionColor = Color(0xFFAFB7C6),
+    backgroundColor = Color(0xFFF0F4FD),
     cardColor = Color(0xFFFFFFFF),
     iconColor = Color(0xFF121212),
     cardIconColor = Color(0xFF888888),

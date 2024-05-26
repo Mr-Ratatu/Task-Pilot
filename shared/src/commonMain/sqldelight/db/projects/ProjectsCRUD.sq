@@ -3,8 +3,8 @@ SELECT *
 FROM projectDTO;
 
 insertProject:
-INSERT INTO projectDTO(id, name, desciption, boardId)
-VALUES (?, ?, ?, ?);
+INSERT INTO projectDTO(id, name, desciption, boardId, tags)
+VALUES (?, ?, ?, ?, ?);
 
 deleteProejct:
 DELETE FROM projectDTO WHERE id IS :id;
@@ -13,5 +13,6 @@ updateProject:
 UPDATE projectDTO SET
 name = :name,
 desciption = :desciption,
-boardId = :boardId
+boardId = :boardId,
+tags = :tags
 WHERE id IS :id;

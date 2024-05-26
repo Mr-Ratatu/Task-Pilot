@@ -9,7 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import renat.task.pilot.theme.AppThemeProvider
+import renat.task.pilot.core.theme.AppThemeProvider
 
 @Composable
 fun ConfirmButton(

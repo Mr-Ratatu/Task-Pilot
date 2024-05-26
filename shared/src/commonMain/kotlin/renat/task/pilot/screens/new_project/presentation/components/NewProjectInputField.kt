@@ -4,8 +4,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
-import renat.task.pilot.core.items.SimpleTextField
-import renat.task.pilot.theme.AppThemeProvider
+import renat.task.pilot.core.view.items.SimpleTextField
+import renat.task.pilot.core.theme.AppThemeProvider
 
 @Composable
 fun NewProjectInputFields(

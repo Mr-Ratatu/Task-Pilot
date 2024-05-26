@@ -5,12 +5,16 @@ import kotlinx.coroutines.launch
 import renat.task.pilot.core.vm.MviViewModel
 import renat.task.pilot.screens.new_project.domain.CreateProjectUseCase
 import renat.task.pilot.screens.new_project.presentation.intent.NewProjectIntent
-import renat.task.pilot.screens.new_project.presentation.intent.NewProjectIntent.*
+import renat.task.pilot.screens.new_project.presentation.intent.NewProjectIntent.CreateProjectIntent
+import renat.task.pilot.screens.new_project.presentation.intent.NewProjectIntent.ProjectDescriptionFieldChanged
+import renat.task.pilot.screens.new_project.presentation.intent.NewProjectIntent.ProjectNameFieldChanged
+import renat.task.pilot.screens.new_project.presentation.intent.NewProjectIntent.TagSelected
 import renat.task.pilot.screens.new_project.presentation.reducer.NewProjectReducer
-import renat.task.pilot.screens.new_project.presentation.reducer.NewProjectReducer.*
+import renat.task.pilot.screens.new_project.presentation.reducer.NewProjectReducer.SetProjectDescription
+import renat.task.pilot.screens.new_project.presentation.reducer.NewProjectReducer.SetProjectName
+import renat.task.pilot.screens.new_project.presentation.reducer.NewProjectReducer.SetProjectTag
 import renat.task.pilot.screens.new_project.presentation.state.NewProjectState
 import renat.task.pilot.screens.projects.model.Project
-import java.util.UUID
 
 class NewProjectViewModel(
     private val createProjectUseCase: CreateProjectUseCase,
@@ -38,10 +42,10 @@ class NewProjectViewModel(
 
     private fun createProject() {
         val state = state.value
-        val project = Project(
+        val project = Project.create(
             projectName = state.projectInputName,
             description = state.description,
-            boardId = UUID.randomUUID().leastSignificantBits,
+            tags = state.chosenTags,
         )
         viewModelScope.launch(Dispatchers.IO) { createProjectUseCase(project) }
     }

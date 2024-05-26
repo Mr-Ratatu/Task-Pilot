@@ -18,9 +18,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import renat.task.pilot.screens.projects.presentation.components.ProjectItem
+import renat.task.pilot.core.theme.AppThemeProvider
 import renat.task.pilot.screens.projects.model.Project
-import renat.task.pilot.theme.AppThemeProvider
+import renat.task.pilot.screens.projects.presentation.components.ProjectItem
 
 @Composable
 fun BoardScreen() {
@@ -30,9 +30,7 @@ fun BoardScreen() {
             .padding(16.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        items(ColumnItem.default) { card ->
-            ColumnBlockItem(card)
-        }
+
     }
 }
 
@@ -83,66 +81,4 @@ fun AddCardButton() {
 data class ColumnItem(
     val title: String,
     val items: List<Project>
-) {
-    companion object {
-
-        val default = buildList<ColumnItem> {
-            val projects = listOf(
-                Project(
-                    "Изучить KMP",
-                    "Необходимо для роста хард скиллов",
-                    0,
-                ),
-                Project(
-                    "Изучить память Android",
-                    "Необходимо для роста хард скиллов",
-                    0,
-                ),
-                Project(
-                    "Изучить art, dalvik",
-                    "Необходимо для роста хард скиллов",
-                    0,
-                ),
-                Project(
-                    "Изучить тестирование",
-                    "Необходимо для роста хард скиллов",
-                    0,
-                ),
-                Project(
-                    "Изучить тестирование",
-                    "Необходимо для роста хард скиллов",
-                    0,
-                ),
-                Project(
-                    "Изучить тестирование",
-                    "Необходимо для роста хард скиллов",
-                    0,
-                ),
-            )
-            add(
-                ColumnItem(
-                    title = "TO DO",
-                    items = projects
-                )
-            )
-            add(
-                ColumnItem(
-                    title = "need improvements",
-                    items = projects
-                )
-            )
-            add(
-                ColumnItem(
-                    title = "review",
-                    items = projects
-                )
-            )
-            add(
-                ColumnItem(
-                    title = "done",
-                    items = projects
-                )
-            )
-        }
-    }
-}
+)

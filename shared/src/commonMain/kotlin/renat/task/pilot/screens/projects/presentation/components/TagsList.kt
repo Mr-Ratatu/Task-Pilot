@@ -1,24 +1,27 @@
-package renat.task.pilot.screens.new_project.presentation.components
+package renat.task.pilot.screens.projects.presentation.components
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
-import renat.task.pilot.core.view.items.TagLabel
+import androidx.compose.ui.Modifier
 import renat.task.pilot.core.theme.AppThemeProvider
+import renat.task.pilot.core.view.items.TagLabel
 
 @Composable
-fun TagListItem(
+fun TagsList(
     tags: List<String>,
-    onTagSelected: (tag: String) -> Unit
+    modifier: Modifier = Modifier,
 ) {
     LazyRow(
+        modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(AppThemeProvider.dimens.halfContentPadding)
     ) {
         items(tags) { tag ->
             TagLabel(
                 tagName = tag,
-                onClick = onTagSelected
+                defaultCheck = true
             )
         }
     }

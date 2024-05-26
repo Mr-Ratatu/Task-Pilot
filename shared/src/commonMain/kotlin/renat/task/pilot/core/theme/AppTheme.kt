@@ -1,11 +1,11 @@
-package renat.task.pilot.theme
+package renat.task.pilot.core.theme
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.staticCompositionLocalOf
-import renat.task.pilot.theme.palette.darkPalette
-import renat.task.pilot.theme.palette.lightPalette
+import renat.task.pilot.core.theme.palette.darkPalette
+import renat.task.pilot.core.theme.palette.lightPalette
 
 @Composable
 fun AppTheme(

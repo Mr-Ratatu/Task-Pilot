@@ -1,4 +1,4 @@
-package renat.task.pilot.theme
+package renat.task.pilot.core.theme
 
 import androidx.compose.ui.graphics.Color
 

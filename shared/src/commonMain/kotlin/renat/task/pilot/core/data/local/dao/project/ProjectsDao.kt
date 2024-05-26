@@ -1,4 +1,4 @@
-package renat.task.pilot.screens.projects.data.local
+package renat.task.pilot.core.data.local.dao.project
 
 import db.projects.ProjectDTO
 import kotlinx.coroutines.flow.Flow

@@ -17,10 +17,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import renat.task.pilot.core.theme.AppThemeProvider
 import renat.task.pilot.screens.projects.model.Project
 
 @Composable
@@ -31,43 +31,62 @@ internal fun ProjectItem(project: Project, modifier: Modifier = Modifier) {
         shape = RoundedCornerShape(8.dp)
     ) {
         Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+            modifier = Modifier.padding(
+                AppThemeProvider.dimens.contentPadding
+            ),
+            verticalArrangement = Arrangement.spacedBy(
+                AppThemeProvider.dimens.halfContentPadding
+            )
         ) {
-            ProjectTypeLabel("Mobile")
+            TagsList(project.tags)
+            ProjectInfoRow(project)
+            ProjectParticipantsRow()
+        }
+    }
+}
 
-            Row(
-                modifier = Modifier.height(intrinsicSize = IntrinsicSize.Min),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                Divider(
-                    modifier = Modifier
-                        .fillMaxHeight()
-                        .width(4.dp)
-                        .background(Color.Green, RoundedCornerShape(16.dp)),
-                )
+@Composable
+private fun ProjectInfoRow(
+    project: Project,
+    modifier: Modifier = Modifier,
+) {
+    Row(
+        modifier = modifier.height(intrinsicSize = IntrinsicSize.Min),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(AppThemeProvider.dimens.halfContentPadding)
+    ) {
+        Divider(
+            modifier = Modifier
+                .fillMaxHeight()
+                .width(AppThemeProvider.dimens.quarterContentPadding)
+                .background(
+                    AppThemeProvider.colors.buttonColor,
+                    RoundedCornerShape(AppThemeProvider.dimens.contentPadding)
+                ),
+        )
 
-                Column(
-                ) {
-                    Text(
-                        modifier = Modifier.padding(bottom = 8.dp),
-                        text = project.projectName,
-                        fontSize = 16.sp,
-                        fontWeight = FontWeight.Bold,
-                    )
-
-                    Text(
-                        text = project.description,
-                        color = Color.Gray,
-                    )
-                }
-            }
+        Column(
+            verticalArrangement = Arrangement.spacedBy(AppThemeProvider.dimens.quarterContentPadding)
+        ) {
+            Text(
+                text = project.projectName,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
+                color = AppThemeProvider.colors.titleTextColor
+            )
 
             Text(
-                text = "1 участник",
-                color = Color.Gray,
+                text = project.description,
+                color = AppThemeProvider.colors.descriptionColor,
             )
         }
     }
+}
+
+@Composable
+private fun ProjectParticipantsRow() {
+    Text(
+        text = "1 участник",
+        color = AppThemeProvider.colors.descriptionColor,
+    )
 }

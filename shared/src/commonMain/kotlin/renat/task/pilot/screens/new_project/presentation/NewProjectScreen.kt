@@ -15,7 +15,7 @@ import renat.task.pilot.screens.new_project.presentation.intent.NewProjectIntent
 import renat.task.pilot.screens.new_project.presentation.intent.NewProjectIntent.ProjectDescriptionFieldChanged
 import renat.task.pilot.screens.new_project.presentation.intent.NewProjectIntent.ProjectNameFieldChanged
 import renat.task.pilot.screens.new_project.presentation.intent.NewProjectIntent.TagSelected
-import renat.task.pilot.theme.AppThemeProvider
+import renat.task.pilot.core.theme.AppThemeProvider
 
 @Composable
 fun NewProjectScreen(viewModel: NewProjectViewModel = koinInject()) {
