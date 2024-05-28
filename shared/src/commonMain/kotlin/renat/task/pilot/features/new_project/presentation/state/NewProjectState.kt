@@ -9,7 +9,7 @@ data class NewProjectState(
     val chosenTags: List<String>,
 ) : State {
     companion object {
-        val NONE = NewProjectState(
+        fun initial() = NewProjectState(
             projectInputName = "",
             description = "",
             tags = listOf("KMP", "Android", "Mobile", "Desktop"),

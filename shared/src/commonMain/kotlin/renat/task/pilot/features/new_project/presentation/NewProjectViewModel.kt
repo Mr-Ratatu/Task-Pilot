@@ -19,7 +19,7 @@ import renat.task.pilot.features.projects.model.Project
 class NewProjectViewModel(
     private val createProjectUseCase: CreateProjectUseCase,
 ): MviViewModel<NewProjectState, NewProjectIntent, NewProjectReducer>() {
-    override fun initialStateValue(): NewProjectState = NewProjectState.NONE
+    override fun initialStateValue(): NewProjectState = NewProjectState.initial()
 
     override fun reduce(
         state: NewProjectState,

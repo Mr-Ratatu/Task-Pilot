@@ -46,13 +46,10 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material)
+                implementation(compose.material3)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 api(compose.components.resources)
                 implementation(compose.components.uiToolingPreview)
-
-                // Resources
-                api(libs.resources.core)
-                api(libs.resources.compose)
 
                 // Database
                 implementation(libs.sqldelight.coroutines.extensions)

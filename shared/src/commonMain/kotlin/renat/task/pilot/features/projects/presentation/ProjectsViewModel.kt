@@ -22,7 +22,7 @@ class ProjectsViewModel(
             .launchIn(viewModelScope)
     }
 
-    override fun initialStateValue() = ProjectsState.NONE
+    override fun initialStateValue() = ProjectsState.initial()
 
     override fun reduce(state: ProjectsState, reducer: ProjectsReducer): ProjectsState {
         return when (reducer) {

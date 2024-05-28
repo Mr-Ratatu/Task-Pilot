@@ -7,4 +7,8 @@
 
     <string name="info_hint_name">Name...</string>
     <string name="info_hint_description">Description...</string>
+
+    <string name="nav_item_projects">Projects</string>
+    <string name="nav_item_kanban">Kanban</string>
+    <string name="nav_item_profile">Profile</string>
 </resources>

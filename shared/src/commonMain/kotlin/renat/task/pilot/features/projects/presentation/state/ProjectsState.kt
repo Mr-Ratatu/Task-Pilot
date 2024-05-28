@@ -7,7 +7,7 @@ data class ProjectsState(
     val projects: List<Project>,
 ) : State {
     companion object {
-        val NONE = ProjectsState(
+        fun initial() = ProjectsState(
             projects = emptyList(),
         )
     }

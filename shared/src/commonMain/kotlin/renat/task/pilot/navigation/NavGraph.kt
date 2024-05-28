@@ -1,6 +1,5 @@
 package renat.task.pilot.navigation
 
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -12,9 +11,12 @@ import renat.task.pilot.features.new_project.presentation.NewProjectScreen
 import renat.task.pilot.features.projects.presentation.ProjectScreen
 
 @Composable
-fun NavGraph(navHostController: NavHostController) {
+fun NavGraph(
+    navHostController: NavHostController,
+    modifier: Modifier = Modifier,
+) {
     NavHost(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier,
         navController = navHostController,
         startDestination = ProjectListScreen.fullRoute
     ) {
