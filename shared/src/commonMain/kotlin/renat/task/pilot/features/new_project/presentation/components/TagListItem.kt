@@ -4,8 +4,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
-import renat.task.pilot.core.view.items.TagLabel
-import renat.task.pilot.core.theme.AppThemeProvider
+import renat.task.pilot.core.view.atoms.TagLabel
+import renat.task.pilot.core.view.theme.AppThemeProvider
 
 @Composable
 fun TagListItem(

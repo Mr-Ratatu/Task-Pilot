@@ -21,8 +21,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import renat.task.pilot.core.theme.AppThemeProvider
-import renat.task.pilot.features.projects.model.Project
+import renat.task.pilot.core.view.theme.AppThemeProvider
+import renat.task.pilot.core.data.model.Project
 
 @Composable
 internal fun ProjectItem(
@@ -44,7 +44,7 @@ internal fun ProjectItem(
                 AppThemeProvider.dimens.halfContentPadding
             )
         ) {
-            TagsList(project.tags)
+            project.tags?.let { TagsList(it) }
             ProjectInfoRow(project)
             ProjectParticipantsRow()
         }
@@ -81,10 +81,12 @@ private fun ProjectInfoRow(
                 color = AppThemeProvider.colors.titleTextColor
             )
 
-            Text(
-                text = project.description,
-                color = AppThemeProvider.colors.descriptionColor,
-            )
+            project.description?.let {
+                Text(
+                    text = it,
+                    color = AppThemeProvider.colors.descriptionColor,
+                )
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 import org.koin.core.qualifier.Qualifier
 import org.koin.dsl.module
+import renat.task.pilot.features.board.di.KanbanBoardModule
 import renat.task.pilot.features.main.di.MainModule
 import renat.task.pilot.features.new_project.di.NewProjectModule
 import renat.task.pilot.features.projects.di.ProjectsModules
@@ -24,10 +25,16 @@ fun initKoin(
     modules(
         *applyModules,
         platformModule,
+
+        // Common modules
         StorageModule.module,
+        ServiceModule.module,
         NavigationModule.module,
+
+        // Feature modules
         MainModule.module,
         ProjectsModules.module,
         NewProjectModule.module,
+        KanbanBoardModule.module,
     )
 }

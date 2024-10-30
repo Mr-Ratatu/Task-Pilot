@@ -1,16 +1,16 @@
 getAllProject:
 SELECT *
-FROM projectDTO;
+FROM ProjectEntity;
 
 insertProject:
-INSERT INTO projectDTO(id, name, desciption, boardId, tags)
+INSERT INTO ProjectEntity(id, name, desciption, boardId, tags)
 VALUES (?, ?, ?, ?, ?);
 
 deleteProejct:
-DELETE FROM projectDTO WHERE id IS :id;
+DELETE FROM ProjectEntity WHERE id IS :id;
 
 updateProject:
-UPDATE projectDTO SET
+UPDATE ProjectEntity SET
 name = :name,
 desciption = :desciption,
 boardId = :boardId,

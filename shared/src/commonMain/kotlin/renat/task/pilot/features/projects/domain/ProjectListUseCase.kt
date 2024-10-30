@@ -1,18 +1,10 @@
 package renat.task.pilot.features.projects.domain
 
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
-import renat.task.pilot.core.data.local.dao.project.ProjectsDao
-import renat.task.pilot.features.projects.model.Project
-import renat.task.pilot.features.projects.model.Project.Companion.toProject
+import renat.task.pilot.core.data.services.project.ProjectService
+import renat.task.pilot.core.data.model.Project
 
-class ProjectListUseCase(private val dao: ProjectsDao) {
+class ProjectListUseCase(private val projectService: ProjectService) {
 
-    operator fun invoke(): Flow<List<Project>> {
-        return dao.projects.map { list ->
-            list.map {
-                it.toProject()
-            }
-        }
-    }
+    operator fun invoke(): Flow<List<Project>> = projectService.projects
 }

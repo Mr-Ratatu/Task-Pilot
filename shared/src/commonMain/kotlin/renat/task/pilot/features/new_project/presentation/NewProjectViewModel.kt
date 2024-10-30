@@ -2,7 +2,7 @@ package renat.task.pilot.features.new_project.presentation
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import renat.task.pilot.core.vm.MviViewModel
+import renat.task.pilot.core.base.vm.MviViewModel
 import renat.task.pilot.features.new_project.domain.CreateProjectUseCase
 import renat.task.pilot.features.new_project.presentation.intent.NewProjectIntent
 import renat.task.pilot.features.new_project.presentation.intent.NewProjectIntent.CreateProjectIntent
@@ -14,7 +14,7 @@ import renat.task.pilot.features.new_project.presentation.reducer.NewProjectRedu
 import renat.task.pilot.features.new_project.presentation.reducer.NewProjectReducer.SetProjectName
 import renat.task.pilot.features.new_project.presentation.reducer.NewProjectReducer.SetProjectTag
 import renat.task.pilot.features.new_project.presentation.state.NewProjectState
-import renat.task.pilot.features.projects.model.Project
+import renat.task.pilot.core.data.model.Project
 
 class NewProjectViewModel(
     private val createProjectUseCase: CreateProjectUseCase,

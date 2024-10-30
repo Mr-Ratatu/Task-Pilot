@@ -1,0 +1,10 @@
+import kotlin.String;
+import kotlin.collections.List;
+
+CREATE TABLE ProjectEntity(
+    id TEXT PRIMARY KEY NOT NULL,
+    name TEXT NOT NULL,
+    desciption TEXT,
+    boardId INTEGER NOT NULL,
+    tags TEXT AS List<String>
+);

@@ -1,6 +1,6 @@
 package renat.task.pilot.features.new_project.presentation.state
 
-import renat.task.pilot.core.vm.State
+import renat.task.pilot.core.base.vm.State
 
 data class NewProjectState(
     val projectInputName: String,

@@ -1,6 +1,6 @@
 package renat.task.pilot.features.main.state
 
-import renat.task.pilot.core.vm.State
+import renat.task.pilot.core.base.vm.State
 import renat.task.pilot.features.main.model.BottomNavigationItem
 
 data class MainScreenState(

@@ -8,8 +8,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import renat.task.pilot.core.theme.AppThemeProvider
-import renat.task.pilot.features.projects.model.Project
+import renat.task.pilot.core.view.theme.AppThemeProvider
+import renat.task.pilot.core.data.model.Project
 
 @Composable
 internal fun ProjectList(

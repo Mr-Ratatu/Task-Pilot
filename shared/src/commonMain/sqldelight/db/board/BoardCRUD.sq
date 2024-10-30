@@ -1,0 +1,35 @@
+getBoardById:
+SELECT * FROM BoardDTO WHERE projectId =: projectId;
+
+getRowsByBoardId:
+SELECT * FROM ColumnDTO WHERE boardId =: boardId;
+
+getTasksById:
+SELECT * FROM TaskDTO WHERE TaskDTO.columnId =: columnId;
+
+
+insertBoard:
+INSERT INTO BoardDTO(id, projectId, boardName)
+VALUES (?, ?, ?);
+
+insertColumn:
+INSERT INTO ColumnDTO(id, boardId, columnName)
+VALUES (?, ?, ?);
+
+
+deleteBoard:
+DELETE FROM BoardDTO WHERE id IS :id;
+
+deleteColumn:
+DELETE FROM ColumnDTO WHERE id IS :id;
+
+
+updateProject:
+UPDATE BoardDTO SET boardName = :name WHERE id IS :id;
+
+updateColumn:
+UPDATE ColumnDTO SET columnName = :name WHERE id IS :id;
+
+
+
+

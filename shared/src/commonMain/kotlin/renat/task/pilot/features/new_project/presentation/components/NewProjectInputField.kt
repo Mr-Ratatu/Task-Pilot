@@ -5,8 +5,8 @@ import androidx.compose.material.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.stringResource
-import renat.task.pilot.core.view.items.SimpleTextField
-import renat.task.pilot.core.theme.AppThemeProvider
+import renat.task.pilot.core.view.atoms.SimpleTextField
+import renat.task.pilot.core.view.theme.AppThemeProvider
 import task_pilot.shared.generated.resources.Res
 import task_pilot.shared.generated.resources.info_hint_description
 import task_pilot.shared.generated.resources.info_hint_name

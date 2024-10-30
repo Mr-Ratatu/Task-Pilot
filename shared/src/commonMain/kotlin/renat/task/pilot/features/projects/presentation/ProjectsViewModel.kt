@@ -2,7 +2,7 @@ package renat.task.pilot.features.projects.presentation
 
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import renat.task.pilot.core.vm.MviViewModel
+import renat.task.pilot.core.base.vm.MviViewModel
 import renat.task.pilot.features.projects.domain.ProjectListUseCase
 import renat.task.pilot.features.projects.presentation.intent.NavIntent
 import renat.task.pilot.features.projects.presentation.intent.ProjectsIntent

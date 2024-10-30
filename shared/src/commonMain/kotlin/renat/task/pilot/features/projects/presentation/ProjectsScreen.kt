@@ -9,7 +9,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import org.koin.compose.koinInject
-import renat.task.pilot.core.theme.AppThemeProvider
+import renat.task.pilot.core.view.theme.AppThemeProvider
 import renat.task.pilot.features.projects.presentation.components.AddNewProjectButton
 import renat.task.pilot.features.projects.presentation.components.ProjectList
 import renat.task.pilot.features.projects.presentation.components.ProjectToolbar

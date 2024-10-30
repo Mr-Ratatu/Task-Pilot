@@ -1,6 +1,6 @@
 package renat.task.pilot.features.main
 
-import renat.task.pilot.core.vm.MviViewModel
+import renat.task.pilot.core.base.vm.MviViewModel
 import renat.task.pilot.features.main.intent.MainScreenIntent
 import renat.task.pilot.features.main.reducer.MainScreenReducer
 import renat.task.pilot.features.main.state.MainScreenState

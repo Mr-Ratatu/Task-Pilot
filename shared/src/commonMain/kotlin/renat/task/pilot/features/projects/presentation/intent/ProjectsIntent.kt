@@ -1,6 +1,6 @@
 package renat.task.pilot.features.projects.presentation.intent
 
-import renat.task.pilot.core.vm.Intent
+import renat.task.pilot.core.base.vm.Intent
 
 sealed interface ProjectsIntent : Intent
 

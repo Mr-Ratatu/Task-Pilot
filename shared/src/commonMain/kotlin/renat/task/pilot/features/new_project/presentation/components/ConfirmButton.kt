@@ -10,8 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import renat.task.pilot.core.theme.AppTheme
-import renat.task.pilot.core.theme.AppThemeProvider
+import renat.task.pilot.core.view.theme.AppTheme
+import renat.task.pilot.core.view.theme.AppThemeProvider
 
 @Composable
 fun ConfirmButton(

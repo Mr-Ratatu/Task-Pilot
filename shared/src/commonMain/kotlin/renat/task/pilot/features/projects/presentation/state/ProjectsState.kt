@@ -1,7 +1,7 @@
 package renat.task.pilot.features.projects.presentation.state
 
-import renat.task.pilot.core.vm.State
-import renat.task.pilot.features.projects.model.Project
+import renat.task.pilot.core.base.vm.State
+import renat.task.pilot.core.data.model.Project
 
 data class ProjectsState(
     val projects: List<Project>,

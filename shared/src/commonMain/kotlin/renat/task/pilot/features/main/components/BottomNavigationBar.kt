@@ -19,7 +19,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
-import renat.task.pilot.core.theme.AppThemeProvider
+import renat.task.pilot.core.view.theme.AppThemeProvider
 import renat.task.pilot.features.main.model.BottomNavigationItem
 
 @Composable

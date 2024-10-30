@@ -12,7 +12,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.flow.Flow
 import org.koin.compose.koinInject
-import renat.task.pilot.core.theme.AppThemeProvider
+import renat.task.pilot.core.view.theme.AppThemeProvider
 import renat.task.pilot.features.main.components.BottomNavigationBar
 import renat.task.pilot.navigation.NavGraph
 import renat.task.pilot.navigation.NavigationIntent

@@ -1,11 +1,10 @@
 package renat.task.pilot.features.new_project.domain
 
-import renat.task.pilot.features.new_project.data.NewProjectRepository
-import renat.task.pilot.features.projects.model.Project
-import renat.task.pilot.features.projects.model.Project.Companion.toProjectDTO
+import renat.task.pilot.core.data.services.project.ProjectService
+import renat.task.pilot.core.data.model.Project
 
-class CreateProjectUseCase(private val repository: NewProjectRepository) {
+class CreateProjectUseCase(private val service: ProjectService) {
     suspend operator fun invoke(project: Project) {
-        repository.createProject(project.toProjectDTO(project.projectName))
+        service.createProject(project)
     }
 }
